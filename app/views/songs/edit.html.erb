@@ -42,6 +42,23 @@
         <p class="mt-2 text-sm text-gray-500" id="title-description">The title of the song.</p>
       </div>
 
+
+    <div class="space-y-6">
+      <div class="text-black-500">
+        <label for="title" class="block text-base font-bold">Language</label>
+        <div class="mt-1">
+          <%= form.select(
+            :language, 
+            [["English", "en"], ["Português - Brasil", "pt"]],
+            {},
+            { class: "mt-1 block w-full pl-3 pr-10 py-2 border-2 border-ba-black-500 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-s rounded" }
+            ) %>
+        </div>
+        <p class="mt-2 text-sm text-gray-500" id="title-description">The title of the song.</p>
+      </div>
+
+      
+
       <div class="text-black-500">
         <label for="description" class="block text-base font-bold">Description</label>
         <div class="mt-1">
