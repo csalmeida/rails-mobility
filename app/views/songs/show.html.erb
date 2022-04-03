@@ -1,0 +1,24 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+  <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+    <div class="ml-4 mt-2">
+      <h3 class="text-xl leading-6 font-bold text-gray-900"><%= @song.title %></h3>
+    </div>
+    <div class="ml-4 mt-2 flex-shrink-0">
+      <%= link_to 'Edit song', edit_song_path(@song), class: "relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+    </div>
+  </div>
+
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  <div class="mt-8 p-4 bg-white shadow overflow-hidden sm:rounded-md space-y-6">
+    <div>
+        <h2 class="text-lg font-bold my-6">Description</h2>
+        <p class="my-6"><%= @song.description %></p>
+    </div>
+    <div>
+        <h2 class="text-lg font-bold my-6">Content</h2>
+        <p class="my-6"><%= @song.content %></p>
+    </div>
+  </div>
+
+</div>
