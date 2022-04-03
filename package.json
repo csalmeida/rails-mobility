@@ -4,21 +4,26 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
-    "autoprefixer": "^10.4.4",
-    "esbuild": "^0.14.30",
-    "postcss": "^8.4.12",
-    "postcss-cli": "^9.1.0",
-    "postcss-nesting": "^10.1.3"
+    "@rails/actiontext": "^6.1.5",
+    "trix": "^2.0.0-beta.0"
   },
   "scripts": {
     "build": "esbuild ./app/javascript/application.ts --outfile=./app/assets/builds/application.js --bundle",
     "build:css": "postcss ./app/assets/stylesheets/application.postcss.css -o ./app/assets/builds/application.css",
     "failure:ts": "rm ./app/assets/builds/application.js && rm ./app/assets/builds/application.js.map",
     "watch:ts": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"yarn build\" --onFailure \"yarn failure:ts\""
-},
+  },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.4.0",
     "@tsconfig/recommended": "^1.0.1",
-    "tsc-watch": "^4.6.2",
-    "typescript": "^4.6.3"
+    "autoprefixer": "^10.4.1",
+    "esbuild": "^0.14.10",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.0.2",
+    "postcss-nesting": "^10.1.1",
+    "tailwindcss": "^3.0.12",
+    "tsc-watch": "^4.6.0",
+    "typescript": "^4.5.4"
   }
 }
