@@ -11,7 +11,14 @@
     "postcss-nesting": "^10.1.3"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
-    "build:css": "postcss ./app/assets/stylesheets/application.postcss.css -o ./app/assets/builds/application.css"
+    "build": "esbuild ./app/javascript/application.ts --outfile=./app/assets/builds/application.js --bundle",
+    "build:css": "postcss ./app/assets/stylesheets/application.postcss.css -o ./app/assets/builds/application.css",
+    "failure:ts": "rm ./app/assets/builds/application.js && rm ./app/assets/builds/application.js.map",
+    "watch:ts": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"yarn build\" --onFailure \"yarn failure:ts\""
+},
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "tsc-watch": "^4.6.2",
+    "typescript": "^4.6.3"
   }
 }
